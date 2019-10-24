@@ -25,7 +25,9 @@ class InteractiveRecord
     column_names.compact
   end
   
-  def self.inheritance
+  def self.inherited(subclass)
+    
+  end 
 
   def initialize(options={})
     self.class.column_names.each do |col_name|
