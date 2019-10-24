@@ -4,7 +4,6 @@ require 'pry'
 class InteractiveRecord
   
 
-<<<<<<< HEAD
   
   def self.table_name
     self.to_s.downcase.pluralize
@@ -27,7 +26,7 @@ class InteractiveRecord
   
 
   
-=======
+
 
   def self.table_name
     self.to_s.downcase.pluralize
@@ -46,7 +45,7 @@ class InteractiveRecord
     column_names.compact
   end
 
->>>>>>> b5c16747373584dfec5470b947a0c53f865987fc
+
   def initialize(options={})
     self.column_names.each do |col_name|
       attr_accessor col_name.to_sym
@@ -54,7 +53,7 @@ class InteractiveRecord
     options.each do |property, value|
       self.send("#{property}=", value)
     end
-<<<<<<< HEAD
+
   end 
   
   
