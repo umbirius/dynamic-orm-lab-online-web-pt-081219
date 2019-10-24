@@ -26,13 +26,12 @@ class InteractiveRecord
   end
   
   def self.inherited(subclass)
-    
+    subclass.column_names.each do |col_name|
+      attr_accessor col_name.to_sym
+    end
   end 
 
   def initialize(options={})
-    self.class.column_names.each do |col_name|
-      attr_accessor col_name.to_sym
-    end
     options.each do |property, value|
       self.send("#{property}=", value)
     end
