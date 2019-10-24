@@ -48,6 +48,9 @@ class InteractiveRecord
 
 >>>>>>> b5c16747373584dfec5470b947a0c53f865987fc
   def initialize(options={})
+    self.column_names.each do |col_name|
+      attr_accessor col_name.to_sym
+    end
     options.each do |property, value|
       self.send("#{property}=", value)
     end
